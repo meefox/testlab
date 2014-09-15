@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Your Basket</title>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="icon" type="image/x-icon" href="img/favicon.ico"> -->
+	<!-- Just for competition disabled-->
+	<!--<script type="text/javascript" src="js/html5shiv.js"></script>-->
+	<!--<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>-->
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<div class="col-6 center">
+				<a href="index" class="logotype" title="Go to BJC Ninja main page"></a>
+			</div>
+		</div>
+
+		<div class="content col-6 center">
+			<div class="basket-title">
+				<h1>Your Basket</h1>
+				<p>Items you have added to your basket are shown below.<br />Adjust the quantities or remove items before continuing your purchase.</p>
+			</div>
+
+			<!--Table for tables-->
+			<table id="basketTable" class="simple-table as-basket">
+				<thead>
+					<tr class="row-header">
+						<th class="col-3 t-left">Product</th>
+						<th class="col-1 t-right">Price</th>
+						<th class="col-1 t-center">Qty</th>
+						<th colspan="2" class="col-1 t-right">Cost</th>
+					</tr>
+				</thead>
+				<tbody id="basketContent">
+					<tr class="row-content" data-item-id="CTSM">
+						<td class="col-3 t-left">
+							<a href="#item1" class="item-name">Cotton T-Shirt, Medium</a>
+
+						</td>
+						<td class="item-price with-pound">1.99</td>
+						<td>
+							<div class="buttons-up-down">
+								<input type="text" class="item-quantity" value="1" maxlength="2" data-action="editMode" disabled />
+								<a href="#item1/plus" data-action="increment" class="button-inc">+</a>
+								<a href="#item1/minus" data-action="decrement" class="button-inc">-</a>
+							</div>
+						</td>
+						<td class="item-total with-pound t-right">1.99</td>
+						<td class="col-action">
+							<a href="#item1/remove" data-action="remove" class="btn-ico ico-bin"></a>
+						</td>
+					</tr>
+					<tr class="row-content" data-item-id="BCOS">
+						<td class="col-3 t-left">
+							<a href="#item2" class="item-name">Baseball Cap, One Size</a>
+						</td>
+						<td class="item-price with-pound">2.99</td>
+						<td>
+							<div class="buttons-up-down">
+								<input type="text" class="item-quantity" value="2" maxlength="2" data-action="editMode" disabled />
+								<a href="#item2/plus" data-action="increment" class="button-inc">+</a>
+								<a href="#item2/minus" data-action="decrement" class="button-inc">-</a>
+							</div>
+						</td>
+						<td class="item-total with-pound t-right">5.98</td>
+						<td class="col-action">
+							<a href="#item2/remove" data-action="remove" class="btn-ico ico-bin"></a>
+						</td>
+					</tr>
+					<tr class="row-content" data-item-id="SSM">
+						<td class="col-3 t-left">
+							<a href="#item3" class="item-name">Swim Shorts, Medium</a>
+						</td>
+						<td class="item-price with-pound">3.99</td>
+						<td>
+							<div class="buttons-up-down">
+								<input type="text" class="item-quantity" value="1" maxlength="2" data-action="editMode" disabled />
+								<a href="#item3/plus" data-action="increment" class="button-inc">+</a>
+								<a href="#item3/minus" data-action="decrement" class="button-inc">-</a>
+							</div>
+						</td>
+						<td class="item-total with-pound t-right">3.99</td>
+						<td class="col-action">
+							<a href="#item3/remove" data-action="remove" class="btn-ico ico-bin"></a>
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr class="row-notes">
+						<td colspan="3">Subtotal</td>
+						<td colspan="2" class=" with-pound t-right" id="subTotal">1.99</td>
+					</tr>
+					<tr class="row-notes">
+						<td colspan="3">VAT @ 20%</td>
+						<td colspan="2" class="with-pound t-right" id="vat">1.99</td>
+					</tr>
+
+					<tr class="row-footer">
+						<td colspan="3">Total Cost</td>
+						<td colspan="2" class="with-pound t-right" id="totalCost">14.99</td>
+					</tr>
+				</tfoot>
+			</table>
+
+			<div class="basket-footer t-right">
+				<a id="sendBasketButton" href="#checkout" class="button btn-checkout">Buy Now »</a>
+			</div>
+		</div>
+
+		<div class="footer">
+			<p class="col-6 center">
+				<span class="bold">&copy; 2013 BJC Ninja Ltd.</span> Registered in England: 2964394
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
