@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	ul { padding: 0 0 0 10px; }
+	li { list-style: none; }
+	.hidden { display: none;}
+	input{ position: relative; top: -2px; left: -2px; }
+	input:disabled { opacity: 0.2; }
+	input:checked:after { content: "!"; position: absolute; left: -5px }
+	.js-translation-group { float: left; width: 200px;}
+	.js-translations { overflow: hidden }
+	</style>
+</head>
+<body>
+	<div class="offset-1of9 js-translations">
+		<div class="pt-m pb-s main-search-results-row js-translation-group">
+			<label>
+				<input class="js-translation-control" data-action="switch-group" type="checkbox" name="internal" id="internal">Internal translations
+			</label>
+
+			<ul class="js-translation-internal pt-m pb-s cf">
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="1" class="btn-mini">
+						<input class="js-translation-switcher" type="checkbox" name="locales[1]" id="locales-internal[1]" value="internal" disabled="">English
+					</label>
+				</li>
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="2" class="btn-mini" data-action="switch-button">
+						<input class="js-translation-switcher" type="checkbox" name="locales[2]" id="locales-internal[2]" value="internal" disabled="">Spanish
+					</label>
+				</li>
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="3" class="btn-mini" data-action="switch-button">
+						<input class="js-translation-switcher" type="checkbox" name="locales[5]" id="locales-internal[5]" value="internal" disabled="">German
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="pt-m pb-s main-search-results-row js-translation-group">
+			<label>
+				<input class="js-translation-control" data-action="switch-group" type="checkbox" name="internal" id="internal">Internal translations
+			</label>
+
+			<ul class="js-translation-internal pt-m pb-s cf">
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="1" class="btn-mini">
+						<input class="js-translation-switcher" type="checkbox" name="locales[1]" id="locales-internal[1]" value="internal" disabled="">English
+					</label>
+				</li>
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="2" class="btn-mini" data-action="switch-button">
+						<input class="js-translation-switcher" type="checkbox" name="locales[2]" id="locales-internal[2]" value="internal" disabled="">Spanish
+					</label>
+				</li>
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="3" class="btn-mini" data-action="switch-button">
+						<input class="js-translation-switcher" type="checkbox" name="locales[5]" id="locales-internal[5]" value="internal" disabled="">German
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="pt-m pb-s main-search-results-row js-translation-group">
+			<label>
+				<input class="js-translation-control" data-action="switch-group" type="checkbox" name="internal" id="internal">Internal translations
+			</label>
+
+			<ul class="js-translation-internal pt-m pb-s cf">
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="1" class="btn-mini">
+						<input class="js-translation-switcher" type="checkbox" name="locales[1]" id="locales-internal[1]" value="internal" disabled="">English
+					</label>
+				</li>
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="2" class="btn-mini" data-action="switch-button">
+						<input class="js-translation-switcher" type="checkbox" name="locales[2]" id="locales-internal[2]" value="internal" disabled="">Spanish
+					</label>
+				</li>
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="3" class="btn-mini" data-action="switch-button">
+						<input class="js-translation-switcher" type="checkbox" name="locales[5]" id="locales-internal[5]" value="internal" disabled="">German
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="pt-m pb-s main-search-results-row js-translation-group">
+			<label>
+				<input class="js-translation-control" data-action="switch-group" type="checkbox" name="internal" id="internal">Internal translations
+			</label>
+
+			<ul class="js-translation-internal pt-m pb-s cf">
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="1" class="btn-mini">
+						<input class="js-translation-switcher" type="checkbox" name="locales[1]" id="locales-internal[1]" value="internal" disabled="">English
+					</label>
+				</li>
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="2" class="btn-mini" data-action="switch-button">
+						<input class="js-translation-switcher" type="checkbox" name="locales[2]" id="locales-internal[2]" value="internal" disabled="">Spanish
+					</label>
+				</li>
+				<li class="fl-l pa-s">
+					<label data-action="switch-button" data-index="3" class="btn-mini" data-action="switch-button">
+						<input class="js-translation-switcher" type="checkbox" name="locales[5]" id="locales-internal[5]" value="internal" disabled="">German
+					</label>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	'use strict';
+	var oModule = function() {
+		var self = {};
+
+		var TRANSLATIONS_CLASS = 'js-translations',
+			_aInstances = [],
+			TYPES_ATTR = 'data-types',
+			CONTROL_CLASS = 'js-translation-control',
+			//--deleted
+			DISABLE_CHECKBOX_CLASS = 'js-disable-inputs',
+			DISABLE_CLASS_ATTR = 'data-input-class',
+			TRANSLATION_CLASS = 'js-translation',
+			EXTERNAL_TRANSLATION_CLASS = 'js-external-translation',
+			_aDisableCheckboxes = [],
+			_aAllLanguages = [];
+
+		return {
+			_updateCheckboxesPrice: function() {
+				var _aCheckboxes = utils.getByClass( EXTERNAL_TRANSLATION_CLASS ),_nExternalTranslationsCounter = 0;
+
+				utilsSmi.fpEach( _aCheckboxes, function( oCheckbox ) {
+					if ( !oCheckbox.disabled && utils.hasClassName( oCheckbox, EXTERNAL_TRANSLATION_CLASS ) && oCheckbox.checked ) {
+						_nExternalTranslationsCounter++;
+					}
+				} );
+
+				oBus.publish( 'main', 'msgid:translations-counter', _nExternalTranslationsCounter );
+			},
+			_onDisableCheckboxClick: function() {
+				var _bChecked = this.checked,
+					_sCheckboxesClass = this.getAttribute( DISABLE_CLASS_ATTR ),
+					_aCheckboxes = utils.getByClass( _sCheckboxesClass );
+
+				utilsSmi.fpEach( _aCheckboxes, function( oCheckbox ) {
+					if ( _bChecked ) {
+						oCheckbox.disabled = false;
+					} else {
+						oCheckbox.checked = false;
+						oCheckbox.disabled = true;
+					}
+				} );
+
+				_updateCheckboxesPrice();
+			},
+			_routeEvent: function(eClick) {
+				var oElement = eClick.target || eClick.srcElement,
+					sAction = oElement.getAttribute('data-action');
+
+				if(sAction === 'switch-button') {
+					this._switchButton(oElement);
+
+				} else if (sAction === 'switch-group') {
+					this._switchGroup(oElement);
+				}
+			},
+			_switchGroup: function(oElement) {
+				for(var i = 0; i < _aInstances[0].controls.length; i++) {
+					var isCurrent = _aInstances[0].controls[i] === oElement;
+
+					if (isCurrent) {
+						//All inputs
+						for( var j = 0; j < _aInstances[0].list[i].length; j++ ) {
+							var cb =_aInstances[0].list[i][j];
+
+							if(oElement.checked) {
+								//Enable group execpt selected in primary
+								if(!_aInstances[0].list[0][j].checked) {
+									cb.disabled = false;
+								}
+							} else {
+								//Disable group
+								if(cb.checked) {
+
+									//Checked if group has selected
+									for(var k = 0; k < _aInstances[0].list.length; k++) {
+										var isGroupEnabled = _aInstances[0].controls[k].checked;
+
+										if(isGroupEnabled) {
+											//Disable selected
+											_aInstances[0].list[k][j].disabled = false;
+										}
+									}
+								}
+								cb.disabled = true;
+								cb.checked = false;
+							}
+						}
+					}
+				}
+			},
+
+			_switchButton: function(oElement) {
+				// debugger;
+				var oCheckbox = oElement.getElementsByTagName('input')[0],
+					currentIndex = (oElement.getAttribute('data-index') - 1);
+
+				if( oCheckbox.disabled ) {
+					return;
+				}
+				// debugger;
+
+				for( var i = 0; i < _aInstances[0].list.length; i++ ) {
+					var cb = _aInstances[0].list[i][currentIndex],
+						isGroupEnabled = _aInstances[0].controls[i].checked,
+						isNotCurrent = cb !== oCheckbox;
+
+					if( isGroupEnabled ) {
+
+						if( oCheckbox.checked ) {
+							//Untick
+							cb.disabled = false;
+						} else {
+							//Tick
+							// var isNotFirst = i !== 0;
+							var isLess = i > 0;
+
+							// Uncheck others
+							if( isNotCurrent ){
+								cb.checked = false;
+							}
+
+							// Disable if first selected
+							//if( isNotCurrent && isNotFirst ){
+							if( isNotCurrent && isLess){
+								 cb.disabled = true;
+							}
+						}
+					}
+
+				}
+				//TODO: Check if button enabled in first group
+				// oElement.className = (oElement.className === 'btn-mini') ? 'btn-mini btn-ok':'btn-mini';
+			},
+			init: function() {
+				var self = this;
+				var oAllInstances = document.getElementsByClassName(TRANSLATIONS_CLASS);
+
+				for(var i = 0; i < oAllInstances.length; i++ ){
+					var oInstance = {},
+						groupList = [];
+					oInstance.elem = oAllInstances[i];
+					oInstance.controls = oInstance.elem.getElementsByClassName('js-translation-control');
+					groupList = oInstance.elem.getElementsByClassName('js-translation-group');
+					oInstance.list = [];
+
+					for(var j = 0; j < groupList.length; j++ ){
+						var controlsList = groupList[j].getElementsByClassName('js-translation-switcher');
+						oInstance.list.push(controlsList);
+					}
+
+					oInstance.elem.addEventListener('click', self._routeEvent.bind(self), false);
+					_aInstances.push(oInstance);
+				}
+				console.log('init', _aInstances);
+				//_aTypes = utils.getByClass( TRANSLATIONS_CLASS ).getAttribute( TYPES_ATTR );
+				// debugger;
+
+				// _aDisableCheckboxes = utils.getByClass( DISABLE_CHECKBOX_CLASS );
+				// utilsSmi.fpEach( _aDisableCheckboxes, function( oDisableCheckbox ) {
+				// 	if ( ns.IE7 ) {
+				// 		_onDisableCheckboxClick = utilsSmi.proxy( oDisableCheckbox, _onDisableCheckboxClick );
+				// 	}
+				// 	utils.bind( oDisableCheckbox, 'click', _onDisableCheckboxClick, false );
+				// } );
+
+				// _aAllLanguages = utils.getByClass( TRANSLATION_CLASS );
+				// utilsSmi.fpEach( _aAllLanguages, function( oCheckbox ) {
+				// 	utils.bind( oCheckbox, 'click', _updateCheckboxesPrice, false );
+				// } );
+
+				// _updateCheckboxesPrice();
+			}
+		};
+	};
+	var mod = new oModule();
+	mod.init();
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Events</title>
+	<style>
+		div {
+			width: 100px; height: 100px;
+			background: #FFA;
+			padding: 10px;
+		}
+		div div {
+			position: relative;
+			top: 50%;
+			background: #CCC;
+		}
+	</style>
+</head>
+<body id="body">
+
+<div id="box1">
+	<div id="box2">
+		<span >
+			<label>
+				<input type="checkbox" /> Inside
+			</label>
+			<br />
+			<label for="cbxi">
+				<input id="cbxi" type="checkbox" /> Inside for
+			</label>
+			<br />
+			<input id="cbx" type="checkbox" />
+			<label for="cbx">By One</label>
+		</span>
+	</div>
+</div>
+
+<script>
+	var Events = function () {
+		var self = this;
+
+		self.clickRoute = function(event) {
+
+			// if( event.target.nodeName === 'LABEL') {
+			// 	event.stopPropagation();
+			// 	return;
+			// }
+			//event.preventDefault();
+			event.stopPropagation();
+			console.log('Body', event.target);
+		};
+
+		self.clickRouteBox = function(event) {
+			// event.stopPropagation();
+			event.cancelable = false;
+			console.log('Box', event.currentTarget);
+		};
+
+		return self;
+	}
+
+	var events = new Events();
+	document.getElementById('body').addEventListener('click', events.clickRoute, true);
+	document.getElementById('box1').addEventListener('click', events.clickRouteBox, false);
+	document.getElementById('box2').addEventListener('click', events.clickRouteBox, false);
+</script>
+</body>
+</html>

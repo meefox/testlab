@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.sidebar,
+	.content{
+		font-size: 10px;
+		border-bottom: 1px solid rgba(9,0,0,.17); 
+		color: rgba(0,0,0,0.5); 
+	}
+	.content{ height: 132px; }
+	.sidebar{ height: 32px; }
+	
+	/* Border based */
+	.main-1{
+		width: 400px;
+		border-left: 100px solid #cfeef7;
+		background: #83D4EE;
+		overflow: visible;
+	}
+	.main-1 .sidebar{
+		float: left;
+		width: 100px;
+		margin-left: -100px;
+	}
+	.main-1 .content{}
+
+	/* Percentage based */
+	.main-2{
+		position: relative; /* This fixes the IE7 overflow hidden bug */
+		clear: both;
+		float: left;
+		width: 500px;
+		overflow: hidden;
+		background: #C8F873;
+	}
+	.main-2 .sidebar-mask{
+		float: left;
+		width: 100%;
+		position: relative;
+		right: 80%;
+		background: #E0FFAA;
+	}
+	.main-2 .content{
+		float: left;
+		position: relative;
+		width: 80%; /* end position */
+		left: 100%; /* start position */
+	}
+	.main-2 .sidebar{
+		float: left;
+		position: relative;
+		width: 20%; /* end position */
+		left: 0%; /* start position */
+	}
+	
+	/* Pixel/Percentage based */
+	.main-3{
+		position: relative; /* This fixes the IE7 overflow hidden bug */
+		clear: both;
+		float: left;
+		width: 500px;
+		overflow: hidden;
+		background: #d8bbfa;
+	}
+	.main-3 .content-mask{
+		float: left;
+		position: relative;
+		width: 200%;
+		left: 100px;
+		background: #B373F8;
+	}
+	.main-3 .content-wrapper{
+		float: right;
+		position: relative;
+		width: 50%;
+		right: 100px;
+	}
+	.main-3 .content{
+		position: relative;
+		right: 100%;
+		margin: 0 0 0 100px;
+		overflow: hidden;
+	}
+	.main-3 .sidebar{
+		float: left;
+		position: relative;
+		width: 100px;
+		right: 100px;
+	}
+
+	/* Pixel based */
+	.main-4{
+		position: relative; /* This fixes the IE7 overflow hidden bug */
+		clear: both;
+		width: 500px;
+		overflow: hidden;
+		background: #fabbf5;
+	}
+	.main-4 .content-mask{
+		float: left;
+		position: relative;
+		width: 500px;
+		left: 100px;
+		background: #f678eb;
+	}
+	.main-4 .content-wrapper{
+		float: left;
+		position: relative;
+		width: 400px;
+		left: 100px;
+	}
+	.main-4 .content{
+		position: relative;
+		left: -100px;
+		overflow: hidden;
+	}
+	.main-4 .sidebar{
+		float: left;
+		position: relative;
+		width: 100px;
+		left: -100px;
+	}
+	
+	/* Table based */
+	.main-5{
+		display: table;
+		width: 500px;
+		background: #FFEBAA;
+	}
+	.main-5 .sidebar{
+		display: table-cell; 
+		width: 100px;
+		background: #FFA;
+		*float: left;
+	}
+	.main-5 .content{
+		display: table-cell;
+		width: 400px;
+		vertical-align: top;
+		*zoom: 1;
+	}
+	
+	/* Inline-block/Gradient based */
+	.main-6{
+		width: 500px;
+		background: #adfead;
+		background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#DAFFAA), color-stop(0.2, #DAFFAA), color-stop(0.2, #AFA));
+		background-image: -webkit-linear-gradient(left, #DAFFAA 0%, #DAFFAA 20%, #AFA 20%);
+		background-image: -moz-linear-gradient(left, #DAFFAA 0%, #DAFFAA 20%, #AFA 20%);
+		background-image: -o-linear-gradient(left, #DAFFAA 0%, #DAFFAA 20%, #AFA 20%);
+		background-image: -ms-linear-gradient(left, #DAFFAA 0%, #DAFFAA 20%, #AFA 20%);
+		background-image: linear-gradient(left, #DAFFAA 0%, #DAFFAA 20%, #AFA 20%);
+	}
+	.main-6 .sidebar{ 
+		display: inline-block;
+		width: 20%;
+		margin-right: -4px;
+		vertical-align: top;
+	}
+	.main-6 .content{ 
+		display: inline-block;
+		width: 80%;
+		vertical-align: top;
+	}
+
+	.clear{
+		clear: both;
+	}
+	.cfx:after {
+		content: "";
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	</style>
+</head>
+<body>
+	<!-- Border based -->
+	<div class="main-1">
+		<div class="sidebar">sidebar</div>
+		<div class="content">content</div>
+		<div class="clear"></div>
+	</div>
+	<!-- Percentage based -->
+	<div class="main-2">
+		<div class="sidebar-mask">
+			<div class="content">content</div>
+			<div class="sidebar">sidebar</div>
+		</div>
+	</div>
+	<!-- Pixel/Percentage based -->
+	<div class="main-3">
+		<div class="content-mask">
+			<div class="content-wrapper">
+				<div class="content">content</div>
+			</div>
+			<div class="sidebar">sidebar</div>
+		</div>
+	</div>
+	<!-- Pixel based -->
+	<div class="main-4">
+		<div class="content-mask">
+			<div class="sidebar">sidebar</div>
+			<div class="content">content</div>
+		</div>
+	</div>
+	<!-- Table based -->
+	<div class="main-5">
+		<span class="sidebar">sidebar</span>
+		<span class="content">content</span>
+	</div>
+	<!-- Inline-block/Gradient based -->
+	<div class="main-6">
+		<span class="sidebar">sidebar</span>
+		<span class="content">content</span>
+	</div>
+</body>
+</html>
